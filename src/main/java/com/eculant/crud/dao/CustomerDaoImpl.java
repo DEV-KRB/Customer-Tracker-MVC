@@ -61,6 +61,7 @@ public class CustomerDaoImpl implements CustomerDao {
 		Session currentSession=sessionFactory.getCurrentSession();
 		
 		//delete the customer
+		@SuppressWarnings("rawtypes")
 		Query theQuery=
 				currentSession.createQuery("delete from customer where id=:id");
 		theQuery.setParameter("id", theId);
